@@ -91,7 +91,7 @@ echo "......."
 
 echo "Procces not running -> log file and message"
 
-if pgrep -x "nginx" > /dev/null; then
+if pgrep -x "nginx"; then
 	
 	echo "nginx is running."
 else 
@@ -99,6 +99,8 @@ else
 	
 	echo "nginx is not running." 
 fi
+
+# pgrep -x -> verifica daca procesul este deschis
 
 echo "......."
 echo "......."
