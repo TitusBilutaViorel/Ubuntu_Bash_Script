@@ -88,3 +88,18 @@ ps aux --sort -rss | head -n 6
 # head -n 6 -> selecteaza primele 6 linii
 
 echo "......."
+
+echo "Procces not running -> log file and message"
+
+if pgrep -x "nginx" > /dev/null; then
+	
+	echo "nginx is running."
+else 
+	echo "nginx is not running." >> logfiles/logfile.log
+	
+	echo "nginx is not running." 
+fi
+
+echo "......."
+echo "......."
+
