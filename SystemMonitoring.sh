@@ -133,4 +133,16 @@ fi
 
 echo "......."
 echo "......."
- 
+
+echo "6. Cron job setup"
+
+echo "..."
+
+echo "Fisierul crontab creat se afla in root/var/spool/cron/crontabs."
+
+echo "0 0 * * * /SystemMonitoring.sh"
+
+# Primele 2 caractere (0, 0) sunt pentru minute si ore, iar urmatoarele pentru ziua lunii, luna si ziua saptamanii.
+
+echo "......."
+echo "......."
