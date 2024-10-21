@@ -12,10 +12,15 @@ echo "Current system's uptime:"
 uptime -p
 uptime -s
 
+# -p -> afiseaza acum cat timp sistemul a fost pornit  (pretty)
+# -s -> afiseaza data si ora la care sistemul a fost pornit
+
 echo "......."
 
 echo "Total and available RAM:"
 free
+
+# free -> informatii despre memoria RAM
 
 echo "......."
 echo "......."
@@ -26,9 +31,9 @@ echo "..."
 
 df
 
-echo "......."
+# df -> informatii despre spatiul de stocare
 
-#If any partition exceeds a given threshold, write a message to a log file and notify the user via output.
+echo "......."
 
 echo "Partition exceeds 80% usage:"
 
@@ -44,6 +49,8 @@ echo "......."
 
 df -H
 
+# df -H -> informatii despre spatiul de stocare in Mb, Kb, Gb, etc.
+
 echo "......."
 echo "......."
 
@@ -54,6 +61,9 @@ echo "..."
 echo "Copy syslog to backup_logs directory:"
 
 cp /var/log/syslog backup_logs/syslog_$(date +"%d%m%Y_%H%M%S").log
+
+# cp -> copiaza un fisier intr-un director dat 
+# (date +"%d%m%Y_%H%M%S") -> adauga data si ora in denumirea fisierului
 
 echo "......."
 
@@ -77,6 +87,8 @@ echo "The currently logged-in users:"
 
 who -u
 
+# who -u -> comanda pentru a afisa loggedin users
+
 echo "......."
 
 echo "Top 5 processes by memory usage:"
@@ -92,12 +104,12 @@ echo "......."
 echo "Procces not running -> log file and message"
 
 if pgrep -x "nginx"; then
-	
+
 	echo "nginx is running."
-else 
+else
 	echo "nginx is not running." >> logfiles/logfile.log
-	
-	echo "nginx is not running." 
+
+	echo "nginx is not running."
 fi
 
 # pgrep -x -> verifica daca procesul este deschis
@@ -105,3 +117,20 @@ fi
 echo "......."
 echo "......."
 
+echo "5. Network check"
+
+echo "..."
+
+if ping -c 1 "www.google.com"; then
+
+	echo "Connection succesful." >> logfiles/logfile.log
+
+else
+	echo "Connection unsuccesful." >> logfiles/logfile.log
+fi
+
+# ping -c 1 -> trimite pachete catre serverul introdus
+
+echo "......."
+echo "......."
+ 
