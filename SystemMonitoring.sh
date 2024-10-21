@@ -53,13 +53,13 @@ echo "..."
 
 echo "Copy syslog to backup_logs directory:"
 
-sudo cp /var/log/syslog backup_logs/syslog_$(date +"%d%m%Y_%H%M%S").log
+cp /var/log/syslog backup_logs/syslog_$(date +"%d%m%Y_%H%M%S").log
 
 echo "......."
 
 echo "Compress the copied logs:"
 
-sudo tar -czvf backup_logs.tar.gz backup_logs
+tar -czvf backup_logs.tar.gz backup_logs
 
 # c -> creeaza o arhiva noua
 # z -> comprima arhiva folosind gzip
@@ -76,5 +76,15 @@ echo "..."
 echo "The currently logged-in users:"
 
 who -u
+
+echo "......."
+
+echo "Top 5 processes by memory usage:"
+
+ps aux --sort -rss | head -n 6
+
+# ps aux -> afiseaza procesele
+# rss -> sorteaza in ordine descrescatoare
+# head -n 6 -> selecteaza primele 6 linii
 
 echo "......."
