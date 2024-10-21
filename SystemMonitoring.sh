@@ -68,3 +68,13 @@ sudo tar -czvf backup_logs.tar.gz backup_logs
 
 echo "......."
 echo "......."
+
+echo "4. User and Process Monitoring"
+
+echo "..."
+
+echo "The currently logged-in users:"
+
+who -u
+
+echo "......."
