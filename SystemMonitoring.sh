@@ -138,7 +138,7 @@ echo "6. Cron job setup"
 
 echo "..."
 
-echo "Fisierul crontab creat se afla in root/var/spool/cron/crontabs."
+echo "The created crontab file is locatet in root/var/spool/cron/crontabs."
 
 echo "0 0 * * * /SystemMonitoring.sh"
 
